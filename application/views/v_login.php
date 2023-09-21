@@ -56,10 +56,7 @@
                                             <input type="text" class="form-control form-control-user"
                                                 placeholder="Username/Nisn" name="username" autofocus required>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                placeholder="Password" name="password" required>
-                                        </div>
+                                       
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>

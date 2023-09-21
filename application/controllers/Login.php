@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 
     public function cek_login(){
         $username = $this->input->post('username', true);
-        $password = $this->input->post('password', true);
+        $password = $this->input->post('username', true);
 
         $cek_admin = $this->user_m->cekAdmin($username);
         if($cek_admin){
@@ -52,7 +52,7 @@ class Login extends CI_Controller {
                     'batas_pemilihan'=>$config['akhir_pemilihan']
                 ];
                 $this->session->set_userdata($sessionData);
-                redirect('welcome');
+                redirect('pemilihan');
             }else{
                 $this->session->set_flashdata('gagal','Password yang anda masukkan salah !');
                 redirect('login');

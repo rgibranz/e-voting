@@ -41,7 +41,7 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+    <?php if($this->session->userdata('level')=='administrator'): ?>
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#7109e0;">
 
@@ -100,21 +100,15 @@
                     <span>Data Calon</span></a>
             </li>
             <?php endif; ?>
-            <?php if($this->session->userdata('level')=='user'): ?>
-            <!-- Nav Item - Pemilihan Suara -->
-            <li class="nav-item <?=isset($mPemilihan)?'active':'';?>">
-                <a class="nav-link" href="<?=base_url('pemilihan');?>">
-                    <i class="fas fa-fw fa-pen"></i>
-                    <span>Pemilihan</span></a>
-            </li>
-            <?php endif; ?>
-            <!-- Nav Item - Hasil Perolehan Suara -->
+            
+            
+            <?php if($this->session->userdata('level')=='administrator'): ?>
+                <!-- Nav Item - Hasil Perolehan Suara -->
             <li class="nav-item <?=isset($mHasil)?'active':'';?>">
                 <a class="nav-link" href="<?=base_url('hasil');?>">
                     <i class="fas fa-fw fa-chart-pie"></i>
                     <span>Hasil Perolehan Suara</span></a>
             </li>
-            <?php if($this->session->userdata('level')=='administrator'): ?>
             <!-- Nav Item - Grafik Perolehan Suara -->
             <li class="nav-item <?=isset($mGrafik)?'active':'';?>">
                 <a class="nav-link" href="<?=base_url('hasil/grafik');?>">
@@ -135,7 +129,7 @@
 
         </ul>
         <!-- End of Sidebar -->
-
+        <?php endif; ?>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -150,7 +144,12 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-0">
+                    <img src="<?=base_url('assets/img/');?>KPU2.png" alt="Logo" height="60" width="50">
+                </div>
+                <div style="color:white; " class="sidebar-brand-text mx-2"><b>KOMISI PEMILIHAN OSIS SMK SIAP </b><sup></sup></div>
+            </a>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
