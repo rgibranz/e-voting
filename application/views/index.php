@@ -41,7 +41,7 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-    <?php if($this->session->userdata('level')=='administrator'): ?>
+    <?php if($this->session->userdata('level')=='administrator' || $this->session->userdata('level')=='operator' ): ?>
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#7109e0;">
 
